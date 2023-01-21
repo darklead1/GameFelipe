@@ -3,41 +3,47 @@ body{
     margin: 0px;
 }
 
-
-
-#board{
+.board img{
     background-color: blue;
     width: 1700px;
     height: 800px;
     position: relative;
 }
 
-#player{
-    
-    width: 75px;
-    height: 75px;
+ #player{    
+    width: 60px;
+    height: 78px;
     position: absolute;
     bottom: 60px;
-    left: 120px;
+    left: 42px;
     z-index: 2;
     
-    background: url(FelipeGame1.png) repeat-x 0px 0px ; 
-    background-size: 150px 150px;
+    background: url(/assets/f_01.png) repeat-x 0px 0px ; 
+    background-size: 120px 78px;
     background-position-x: 0px;
 }
 
+.player_running {
+    animation: animatePlayer 0.45s steps(2) infinite;
+}
 
+@keyframes animatePlayer {
+    from {
+        background-position-x: 0px;
+    }
 
+    to {
+        background-position-x: -120px;
+    }
+}
 
-#background img{
-
+.background {
     width: 1700px;
     height: 800px;
 }
 
 .playerJump{
-
-animation: playerJump 1s linear ;
+    animation: playerJump 1s linear ;
 }
 
 @keyframes playerJump {
@@ -48,6 +54,3 @@ animation: playerJump 1s linear ;
         bottom: 300px;
     }
 }
-
-
-
