@@ -11,16 +11,30 @@ body{
 }
 
  #player{    
-    width: 75px;
-    height: 150px;
+    width: 60px;
+    height: 78px;
     position: absolute;
     bottom: 60px;
     left: 42px;
     z-index: 2;
     
-    background: url(/assets/FelipeGame1.png) repeat-x 0px 0px ; 
-    background-size: 150px 150px;
+    background: url(/assets/f_01.png) repeat-x 0px 0px ; 
+    background-size: 120px 78px;
     background-position-x: 0px;
+}
+
+.player_running {
+    animation: animatePlayer 0.45s steps(2) infinite;
+}
+
+@keyframes animatePlayer {
+    from {
+        background-position-x: 0px;
+    }
+
+    to {
+        background-position-x: -120px;
+    }
 }
 
 .background {
