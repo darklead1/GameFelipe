@@ -1,0 +1,53 @@
+
+body{
+    margin: 0px;
+}
+
+
+
+#board{
+    background-color: blue;
+    width: 1700px;
+    height: 800px;
+    position: relative;
+}
+
+#player{
+    
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    bottom: 60px;
+    left: 120px;
+    z-index: 2;
+    
+    background: url(FelipeGame1.png) repeat-x 0px 0px ; 
+    background-size: 150px 150px;
+    background-position-x: 0px;
+}
+
+
+
+
+#background img{
+
+    width: 1700px;
+    height: 800px;
+}
+
+.playerJump{
+
+animation: playerJump 1s linear ;
+}
+
+@keyframes playerJump {
+    0%{
+        bottom: 60px;
+    }
+    45%, 55%{
+        bottom: 300px;
+    }
+}
+
+
+
