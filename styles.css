@@ -3,41 +3,33 @@ body{
     margin: 0px;
 }
 
-
-
-#board{
+.board img{
     background-color: blue;
     width: 1700px;
     height: 800px;
     position: relative;
 }
 
-#player{
-    
+ #player{    
     width: 75px;
-    height: 75px;
+    height: 150px;
     position: absolute;
     bottom: 60px;
-    left: 120px;
+    left: 42px;
     z-index: 2;
     
-    background: url(FelipeGame1.png) repeat-x 0px 0px ; 
+    background: url(/assets/FelipeGame1.png) repeat-x 0px 0px ; 
     background-size: 150px 150px;
     background-position-x: 0px;
 }
 
-
-
-
-#background img{
-
+.background {
     width: 1700px;
     height: 800px;
 }
 
 .playerJump{
-
-animation: playerJump 1s linear ;
+    animation: playerJump 1s linear ;
 }
 
 @keyframes playerJump {
@@ -48,6 +40,3 @@ animation: playerJump 1s linear ;
         bottom: 300px;
     }
 }
-
-
-
