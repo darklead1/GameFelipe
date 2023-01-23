@@ -4,15 +4,19 @@
 
 
 body{
-    margin: 0px;
+  /* margin: 0px; */
+  max-width: 90%;
+  /* align center */
+  margin: 0 auto;
 }
 
 .board {
     background-color: blue;
-    width: 1600px;
+    border-radius: 50px;
+    width: 100%;
     height: 700px;
     position: relative;
-    margin: 5%;
+    margin: 5% 0%;
 }
 
  #player{    
@@ -43,7 +47,6 @@ body{
 }
 
 .land {
-
   width: 100%;
   height: 100%;
   position: absolute;
@@ -53,9 +56,9 @@ body{
   background-repeat: repeat;
   background-position: 0 0;
   background-size: auto 100%;
-/*adjust s value for speed*/
+  
+  /*adjust s value for speed*/
   animation: backgroundMove 20s linear infinite;
-
 }
 
 .playerJump{
@@ -75,32 +78,85 @@ body{
    from {
     background-position: 0 0;
   }
-/*use negative width if you want it to flow right to left else and positive for left to right*/
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
     background-position: -10000px 0;
   }
 }
 
-.tvRetro {
-    
-    width: 75px;
-    height: 89px;
-    position: absolute;
-    bottom: 124px;
-    left: 900px;
-    
-    background: url("./assets/tvMario.png");
-    animation: tvRetroMove 30s linear infinite;
-  
+#tvRetro {  
+  /* animation: tvRetroMove 30s linear infinite; */
+  background: url("./assets/tvMario.png");
+  bottom: 30px;
+  height: 89px;
+  left: 900px;
+  max-height: 71px;
+  max-width: 60px;
+  position: absolute;
+  width: 75px;
 }
 
 @keyframes tvRetroMove {
-
-    from {
+  from {
     background-position: 0 0;
   }
-/*use negative width if you want it to flow right to left else and positive for left to right*/
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
     background-position: -10000px 0;
   }
+}
+
+
+
+/* Obstacles */
+.obstacle-play {
+  animation-duration: 3s;
+}
+
+.obstacle1, .obstacle2 {
+    height: 60px;
+    width: auto;
+    position: absolute;
+    bottom: 120px;
+}
+
+.obstacle1 {
+    left: 120vw;
+      /* background: url("./assets/tvMario.png"); */
+
+}
+.obstacle2 {
+    left: 240vw;
+}
+
+.obstacle1-move {
+    animation-name: obstacle1-animation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.obstacle2-move {
+    animation-name: obstacle2-animation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes obstacle1-animation {
+    0% {
+        left: 125vw;
+    }
+    100% {
+        left: -120vw;
+    }
+}
+
+@keyframes obstacle2-animation {
+    0% {
+        left: 240vw;
+    }
+    100% {
+        left: -240vw;
+    }
 }
