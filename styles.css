@@ -1,30 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
 
 body{
     margin: 0px;
 }
 
-.board img{
+.board {
     background-color: blue;
-    width: 1700px;
-    height: 800px;
+    width: 1600px;
+    height: 700px;
     position: relative;
+    margin: 5%;
 }
 
  #player{    
-    width: 60px;
+    width: 61px;
     height: 78px;
     position: absolute;
-    bottom: 60px;
-    left: 42px;
+    bottom: 40px;
+    left: 200px;
     z-index: 2;
     
-    background: url(/assets/f_01.png) repeat-x 0px 0px ; 
-    background-size: 120px 78px;
+    background: url(/assets/f_03.png) repeat-x 0px 0px ; 
+    background-size: 480px 86px;
     background-position-x: 0px;
 }
 
 .player_running {
-    animation: animatePlayer 0.45s steps(2) infinite;
+    animation: animatePlayer 1s steps(8) infinite;
 }
 
 @keyframes animatePlayer {
@@ -33,24 +38,69 @@ body{
     }
 
     to {
-        background-position-x: -120px;
+        background-position-x: -480px;
     }
 }
 
-.background {
-    width: 1700px;
-    height: 800px;
+.land {
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("./assets/LandGame.png");
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: auto 100%;
+/*adjust s value for speed*/
+  animation: backgroundMove 20s linear infinite;
+
 }
 
 .playerJump{
-    animation: playerJump 1s linear ;
+    animation: playerJump 0.75s linear ;
 }
 
 @keyframes playerJump {
     0%{
-        bottom: 60px;
+        bottom: 40px;
     }
     45%, 55%{
-        bottom: 300px;
+        bottom: 350px;
     }
+}
+
+@keyframes backgroundMove {
+   from {
+    background-position: 0 0;
+  }
+/*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}
+
+.tvRetro {
+    
+    width: 75px;
+    height: 89px;
+    position: absolute;
+    bottom: 124px;
+    left: 900px;
+    
+    background: url("./assets/tvMario.png");
+    animation: tvRetroMove 30s linear infinite;
+  
+}
+
+@keyframes tvRetroMove {
+
+    from {
+    background-position: 0 0;
+  }
+/*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
 }
