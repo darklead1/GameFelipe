@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego Felipe</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <div class="board">
-        <div class="background">
-        <div class="land"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego Felipe</title>
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head>
+    <body>
+    <div class="test">
+        <div class="board">
+            <div class="background">
+                <div id="land" class="land landMove"></div>
+                <div class="scoreContainer">
+                    Score:<span id="score">0</span>
+                </div>
+                <div>
+                    <div id="player" class="player_running"></div>
+                    <div id="tvRetro" class="obstacle1 obstacle1-move obstacle-play"></div>
+                    <div id="alien" class="obstacle2 obstacle2-move obstacle-play"></div>
+                    <div id="ghost" class="obstacle3 obstacle3-move obstacle-play"></div>
+                    <div id="ghost2" class="obstacle4 obstacle4-move obstacle-play"></div>
+                    <div id="dino" class="obstacle5 obstacle5-move obstacle-play"></div>
+                </div>
+            </div>
+        </div>
+       
+        <div>
+            <button type="button" id="button_restart"><img src="assets/start-click.png" height ="41" width="99"/></button>
+             <p id="parrafo_1"> Presiona "Space" para saltar </p>
+            <p id="parrafo_2"> Los fantasmitas solo pueden asustarte 👻</p>
             
         </div>
+</div>
+
+        <script src="./script.js"> </script>
         
-
-    </div>
-        <div id="player" class="player_running"> 
-        </div>
-
-        
-        <div class="tvRetro"> 
-        </div>
-
-    </div>
-    </div>
-    
-    
-
-
-
-    <script src="./script.js"> </script>
 </body>
 </html>

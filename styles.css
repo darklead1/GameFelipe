@@ -1,18 +1,39 @@
 * {
     box-sizing: border-box;
+    cursor: url(/assets/cursor.png) 14 0,pointer;
+}
+
+:root {
+    font-family: Inter,Avenir,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: #ffffffde;
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
 
 body{
-    margin: 0px;
+  
+  
+  /* align center */
+  margin: 0 auto;
 }
 
 .board {
     background-color: blue;
-    width: 1600px;
+    border-radius: 50px;
+    width: 100%;
     height: 700px;
     position: relative;
-    margin: 5%;
+    margin: 2% 0%;
+    overflow: hidden;
 }
 
  #player{    
@@ -43,7 +64,6 @@ body{
 }
 
 .land {
-
   width: 100%;
   height: 100%;
   position: absolute;
@@ -53,10 +73,17 @@ body{
   background-repeat: repeat;
   background-position: 0 0;
   background-size: auto 100%;
-/*adjust s value for speed*/
-  animation: backgroundMove 20s linear infinite;
-
+  
+  /*adjust s value for speed*/
+  
+  
 }
+
+.landMove {
+animation: backgroundMove 20s linear infinite;
+}
+
+
 
 .playerJump{
     animation: playerJump 0.75s linear ;
@@ -75,32 +102,324 @@ body{
    from {
     background-position: 0 0;
   }
-/*use negative width if you want it to flow right to left else and positive for left to right*/
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
     background-position: -10000px 0;
   }
 }
 
-.tvRetro {
-    
-    width: 75px;
-    height: 89px;
-    position: absolute;
-    bottom: 124px;
-    left: 900px;
-    
-    background: url("./assets/tvMario.png");
-    animation: tvRetroMove 30s linear infinite;
+#tvRetro {  
   
+  background: url("./assets/tvMario.png");
+  bottom: 30px;
+  height: 89px;
+  left: 900px;
+  max-height: 71px;
+  max-width: 60px;
+  position: absolute;
+  width: 75px;
 }
 
 @keyframes tvRetroMove {
-
-    from {
+  from {
     background-position: 0 0;
   }
-/*use negative width if you want it to flow right to left else and positive for left to right*/
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
     background-position: -10000px 0;
   }
+}
+
+#alien {  
+  
+  background: url("./assets/alien.png");
+  bottom: 90px;
+  height: 68px;
+  left: 900px;
+  max-height: 68px;
+  max-width: 91px;
+  position: absolute;
+  width: 91px;
+}
+
+@keyframes alienMove {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}
+
+#ghost {  
+  
+  background: url("./assets/ghost.png");
+  bottom: 130px;
+  height: 68px;
+  left: 900px;
+  max-height: 63px;
+  max-width: 77px;
+  position: absolute;
+  width: 91px;
+}
+
+@keyframes ghostMove {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}
+
+#ghost2 {  
+  
+  background: url("./assets/ghost.png");
+  bottom: 40px;
+  height: 68px;
+  left: 900px;
+  max-height: 63px;
+  max-width: 77px;
+  position: absolute;
+  width: 91px;
+}
+
+@keyframes ghostMove2 {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}
+
+
+#dino {  
+  
+  background: url("./assets/dino.png");
+  bottom: 40px;
+  height: 68px;
+  left: 900px;
+  max-height: 60px;
+  max-width: 64px;
+  position: absolute;
+  width: 91px;
+}
+
+@keyframes dino {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}
+
+
+
+/* Obstacles */
+.obstacle-play {
+  animation-duration: 3s;
+}
+
+.obstacle1, .obstacle2 {
+    height: 60px;
+    width: auto;
+    position: absolute;
+    bottom: 120px;
+}
+
+.obstacle1 {
+    left: 120vw;
+     
+
+}
+.obstacle2 {
+    left: 240vw;
+}
+
+.obstacle3 {
+    left: 360vw;
+}
+
+.obstacle1-move {
+    animation-name: obstacle1-animation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.obstacle2-move {
+    animation-name: obstacle2-animation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+.obstacle3-move {
+    animation-name: obstacle3-animation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+.obstacle4-move {
+    animation-name: obstacle3-animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+.obstacle5-move {
+    animation-name: obstacle3-animation;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes obstacle1-animation {
+    0% {
+        left: 125vw;
+    }
+    100% {
+        left: -120vw;
+    }
+}
+
+@keyframes obstacle2-animation {
+    0% {
+        left: 240vw;
+    }
+    100% {
+        left: -240vw;
+    }
+}
+
+@keyframes obstacle3-animation {
+    0% {
+        left: 360vw;
+    }
+    100% {
+        left: -360vw;
+    }
+}
+
+@keyframes obstacle4-animation {
+    0% {
+        left: 125vw;
+    }
+    100% {
+        left: -120vw;
+    }
+}
+
+@keyframes obstacle5-animation {
+    0% {
+        left: 160vw;
+    }
+    100% {
+        left: -160vw;
+    }
+}
+
+.scoreContainer {
+  font-size: 50px;
+  text-align-last: center;
+  position: absolute;
+  color: #ffffffde;
+  left: 75%;
+  bottom: 90%;
+  float: left;
+}
+
+.score {
+  font-size: 50px;
+  text-align-last: center;
+  position: absolute;
+  color: #ffffffde;
+  left: 114%;
+  bottom: 0%;
+  clear: both;
+
+}
+
+ /* Botones*/
+
+
+
+
+#button_restart {
+    cursor: url(/assets/cursor-click.png) 14 0 pointer;
+    
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #242424;
+}
+
+/* modal */
+
+.ed-modal-container {
+  
+  background-color: rgba(255,255,255, 0.18);
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+    z-index: 3;
+}
+
+.ed-modal-container::before {
+  content: "X";
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5em;
+
+}
+
+.ed-modal-content {
+
+  height: 273px;
+  width: 552px;
+  margin: auto;
+  max-width: 1000px;
+  background: url("./assets/game_over.png");
+  
+
+}
+.ed-modal-content div {
+  color: blue;
+}
+
+.test {
+      padding: 0% 1%;
+}
+
+#parrafo_1 {
+    left: 10%;
+    position: absolute;
+    width: 402px;
+    height: 32px;
+    bottom: 11px;
+    font-size: 26px;
+}
+
+#parrafo_2 {
+  left: 65%;
+    position: absolute;
+    width: 495px;
+    height: 32px;
+    bottom: 11px;
+    font-size: 26px;
 }
